@@ -1,29 +1,23 @@
 class AssignmentSubmission:
     def __init__(self, student_name: str, student_id: str, assignment_title: str, due_date: str):
-        # Public attributes
         self.student_name = student_name
         self.student_id = student_id
-        
-        # Protected attributes
         self._assignment_title = assignment_title
         self._due_date = due_date
-        
-        # Private attributes
         self.__is_submitted = False
         self.__grade = None
         self.__submitted_files = []
 
-    # Private Helper / Validation Methods
+   
     def __validate_grade(self, score: float) -> bool:
         return score is not None and 0 <= score <= 100
 
     def __check_submission_status(s):
-        pass  # Helper method placeholder for internal status checks
+        pass  
 
     def __is_duplicate(self, filename: str) -> bool:
         return filename in self.__submitted_files
-
-    # Public Methods
+        
     def add_file(self, filename: str):
         if self.__grade is not None:
             print(f"--> [Warning] {self.student_name} cannot modify files. Assignment already graded.")
@@ -71,11 +65,6 @@ class AssignmentSubmission:
         status_str = f"Submitted ({len(self.__submitted_files)} files)" if self.__is_submitted else "Missing"
         grade_str = self.get_grade()
         return f"ID: {self.student_id} | Name: {self.student_name:<16} | Status: {status_str} | Grade: {grade_str}"
-
-
-# =====================================================================
-# EXACT TEST SCRIPT (PART A)
-# =====================================================================
 
 print("--- INITIALIZING DROPBOX FOR STUDENTS ---")
 student1 = AssignmentSubmission(student_name="Alex Gonzaga", student_id="pshs-1090-x", assignment_title="CS-101", due_date="2026-10-01")
