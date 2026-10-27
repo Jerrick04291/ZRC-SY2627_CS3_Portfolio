@@ -1,5 +1,3 @@
-
-# Parent class
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -36,14 +34,14 @@ lion = Lion("Simba")
 elephant = Elephant("Dumbo")
 monkey = Monkey("George")
 
-print(lion.make_sound())
-print(lion.eat())
+lion.make_sound()
+lion.eat()
 print("------")
 
-print(elephant.make_sound())
-print(elephant.eat())
+elephant.make_sound()
+elephant.eat()
 print("------")
 
-print(monkey.make_sound())
-print(monkey.eat())
+monkey.make_sound()
+monkey.eat()
 print("------")
